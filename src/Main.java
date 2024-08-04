@@ -14,5 +14,6 @@ public class Main {
         System.out.println(meuFilme.totalDeAvaliacao);
 
         System.out.println(meuFilme.pegaMedia());
+        
     }
 }
