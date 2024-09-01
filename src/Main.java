@@ -4,6 +4,9 @@ import br.com.alura.screenmatch.modelos.Epsodios;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.io.File;
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
@@ -52,7 +55,21 @@ public class Main {
         episodio.setTotalVsiualisacoes(300);
         filtro.filtra(episodio);
 
+        var filmeDoPaulo = new Filme();
+        filmeDoPaulo.setDuracaoEmMinutos(200);
+        filmeDoPaulo.setNome("Dogville");
+        filmeDoPaulo.setAnoDeLancamento(2003);
+        filmeDoPaulo.avalia(10);
 
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDoPaulo);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(meuFilme2);
+        System.out.println("\nTamanho da lista: "+ listaDeFilmes.size());
+        System.out.println("Primerio filme: "+listaDeFilmes.get(0).getNome());
+        System.out.println(listaDeFilmes);
+        System.out.println("Primerio filme: "+listaDeFilmes.get(0).toString());
+        //agora com o toStringo aparece os nomes dos filmes pq eu reescrev ele na classe Filme
 
 
 
