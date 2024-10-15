@@ -7,6 +7,7 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;//biblioteca Gson para converter um json em um objeto Javabiblioteca Gson para converter um json em um objeto Java
 import com.google.gson.GsonBuilder;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -53,6 +54,11 @@ public class PrincipalComBusca {
             Titulo meuTitulo = new Titulo(meuTituloOmdb);
             System.out.println("Titulo já conmvertido");
             System.out.println(meuTitulo);
+
+            FileWriter escrita = new FileWriter("filmes.txt");
+            escrita.write(meuTitulo.toString());
+            escrita.close();
+
         } catch (NumberFormatException e) {
             System.out.println("Aconteceu um erro ");
             System.out.println(e.getMessage());
